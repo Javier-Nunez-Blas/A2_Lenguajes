@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE biblioteca[
+
+    <!ELEMENT libros (libro+)>
+    <!ELEMENT libro (capitulos+, indice, sinopsis)>
+    <!ELEMENT capitulos (titulo, contenido)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT contenido (#PCDATA)>
+    <!ELEMENT indice (#PCDATA)>
+    <!ELEMENT sinopsis (#PCDATA)>
+
+    <!ATTLIST libro 
+        Id ID #REQUIRED
+        tipo_clase (novela | infantil | didactico) #REQUIRED
+        paginas CDATA #REQUIRED>
+    <!ATTLIST capitulos paginas CDATA #REQUIRED>
+    <!ATTLIST capitulos enlace CDATA #REQUIRED>
+
+    <!ELEMENT revistas (revista+)>
+    <!ELEMENT revista (titulo_revista, numero, indice, seccion_revista+)>
+    <!ELEMENT seccion_revista (contenido)>
+
+    <!ATTLIST revista 
+        Id ID #REQUIRED
+        tipo_clase (informatica|  corazon | coches | investigacion  | otras) #REQUIRED
+        paginas CDATA #REQUIRED>
+    <!ATTLIST seccion_revista paginas CDATA #REQUIRED> 
+    <!ATTLIST seccion_revista enlace CDATA #REQUIRED>
+
+    <!ELEMENT periodicos (periodico+)>
+    <!ELEMENT periodico (seccion+, indice, contenido)>
+    <!ELEMENT seccion (articulo+)>
+    <!ELEMENT articulo (#PCDATA)>
+    <!ELEMENT indice (#PCDATA)>
+    <!ELEMENT contenido (#PCDATA)>
+
+    <!ATTLIST periodico 
+        Id ID #REQUIRED
+        tipo_clase (nacionales | internacionales) #REQUIRED
+        fecha_publicacion CDATA #REQUIRED>
+    <!ATTLIST seccion tipo_seccion (economica | opinion | deportes | nacional | internacional) #REQUIRED> 
+    <!ATTLIST articulo autor CDATA #REQUIRED>
+    <!ATTLIST contenido informacion CDATA #REQUIRED>
+]>
+
+<biblioteca>
+    <libros>
+        <libro Id="L0001" tipo_clase="novela" paginas="300">
+        <titulo>El señor de los anillos</titulo>
+        <capitulos paginas="100">
+            <titulo>La comarca</titulo>
+             <contenido enlace="http://novela.com/lacomarca"/>
+         </capitulos>
+        <capitulos paginas="100">
+            <titulo>Ribendel</titulo>
+            <contenido enlace="http://novela.com/ribendel"/>
+        </capitulos>
+        <capitulos paginas="100">
+               <titulo>La comunidad del anillo</titulo>
+              <contenido enlace="http://novela.com/lacomunidaddelanillo"/>
+         </capitulos>
+        <indice>La commarca pag 1. Ribendel Pag 101. La comunidad del anillo pag 201</indice>
+        <sinopsis>Tienen que destruir el anillo</sinopsis>
+        </libro>
+
+        <libro Id="L0002" tipo_clase="infantil" paginas="200">
+        <titulo>Pepa pig</titulo>
+            <capitulos paginas="100">
+                <titulo>Hola Pepa</titulo>
+                <contenido enlace="http://infantil.com/holapepa"/>
+            </capitulos>
+            <capitulos paginas="100">
+                <titulo>Adios Pepa</titulo>
+                <contenido enlace="http://infantil.com/adiospepa"/>
+            </capitulos>
+        <indice>Hola Pepa pag 1. Adios Pepa pag 101</indice>
+        <sinopsis>Pepa saluda y pepa se despide</sinopsis>
+        </libro>
+
+        <libro Id="L0003" tipo_clase="didactico" paginas="300">
+        <titulo>Lenguajes de marcas</titulo>
+            <capitulos paginas="100">
+                <titulo>XML</titulo>
+                <contenido enlace="http://didactico.com/XML"/>
+            </capitulos>
+            <capitulos paginas="100">
+                <titulo>DTD</titulo>
+                <contenido enlace="http://didactico.com/DTD"/>
+            </capitulos>
+           <capitulos paginas="100">
+                <titulo>XSD</titulo>
+                <contenido enlace="http://didactico.com/XSD"/>
+            </capitulos>
+        <indice>XML pag 1. DTD pag 101. XSD pag 201</indice>
+        <sinopsis>Creacion de XML, VALIDACION DTD y XSD</sinopsis>
+        </libro>
+    </libros>
+
+    <revistas>
+        <revista Id="R0001" tipo_clase="informatica" paginas="300">
+        <titulo_revista>Lenguajes de marcas</titulo_revista>
+        <numero>1</numero>
+        <indice>indice de contenido</indice>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://informaticas.com/1"/>
+            </seccion_revista>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://informaticas.com/2"/>
+            </seccion_revista>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://informaticas.com/3"/>
+            </seccion_revista>
+        </revista>
+
+        <revista Id="R0002" tipo_clase="corazon" paginas="200">
+        <titulo_revista>Salsa rosa</titulo_revista>
+        <numero>3</numero>
+        <indice>indice de contenido</indice>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://corazon.com/1"/>
+            </seccion_revista>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://corazon.com/2"/>
+            </seccion_revista>
+        </revista>
+
+        <revista Id="R0003" tipo_clase="coches" paginas="450">
+        <titulo_revista>Mas ue coches</titulo_revista>
+        <numero>10</numero>
+        <indice>indice de contenido</indice>
+            <seccion_revista paginas="150">
+                <contenido enlace="https://coches.com/1"/>
+            </seccion_revista>
+            <seccion_revista paginas="150">
+                <contenido enlace="https://coches.com/2"/>
+            </seccion_revista>
+            <seccion_revista paginas="150">
+                <contenido enlace="https://coches.com/3"/>
+            </seccion_revista>
+        </revista>
+
+        <revista Id="R0004" tipo_clase="investigacion" paginas="200">
+        <titulo_revista>Investigacion y ciencia</titulo_revista>
+        <numero>14</numero>
+        <indice>indice de contenido</indice>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://investigacion.com/1"/>
+            </seccion_revista>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://investigacion.com/2"/>
+            </seccion_revista>
+        </revista>
+
+        <revista Id="R0005" tipo_clase="otras" paginas="300">
+        <titulo_revista>Marca</titulo_revista>
+        <numero>1</numero>
+        <indice>indice de contenido</indice>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://otras.com/1"/>
+            </seccion_revista>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://otas.com/2"/>
+            </seccion_revista>
+            <seccion_revista paginas="100">
+                <contenido enlace="https://otras.com/3"/>
+            </seccion_revista>
+        </revista>
+    </revistas>
+
+    <periodicos>
+        <periodico Id="P0001" tipo_clase="nacionales" fecha_publicacion="10-04-2010">
+            <seccion tipo_seccion="económica">
+             <articulo autor="Javier">Banco de España</articulo>
+            </seccion>
+            <seccion tipo_seccion="opinión">
+             <articulo autor="Ana">Opinion Ana</articulo>
+            </seccion>
+            <seccion tipo_seccion="deportes">
+             <articulo autor="David">Real Madrid</articulo>
+            </seccion>
+            <seccion tipo_seccion="nacional">
+             <articulo autor="Alba">Sequia nacional</articulo>
+            </seccion>
+            <seccion tipo_seccion="internacional">
+             <articulo autor="Jairo">Guerra Ucrania</articulo>
+            </seccion>
+        <indice>indice de contenido</indice>
+        <contenido informacion="info1"></contenido>
+        </periodico>
+
+        <periodico Id="P0002" tipo_clase="internacionales" fecha_publicacion="15-05-2002">
+            <seccion tipo_seccion="económica">
+             <articulo autor="Javier">Bolsa de Wall Street</articulo>
+            </seccion>
+            <seccion tipo_seccion="opinión">
+             <articulo autor="Ana">Opinion Ana internacional</articulo>
+            </seccion>
+            <seccion tipo_seccion="deportes">
+             <articulo autor="David">NBA</articulo>
+            </seccion>
+            <seccion tipo_seccion="nacional">
+             <articulo autor="Alba">Nacional internacional</articulo>
+            </seccion>
+            <seccion tipo_seccion="internacional">
+             <articulo autor="Jairo">Internacional internacional</articulo>
+            </seccion>
+        <indice>índicce de contenido</indice>
+        <contenido informacion="info2"></contenido>
+        </periodico>
+    </periodicos>
+
+</biblioteca>
