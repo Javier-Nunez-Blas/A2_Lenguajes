@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="biblioteca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="libros">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="libro" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="titulo_l" type="xs:string"/>
+                    <xs:element name="indice_l">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="capitulos_l">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="capitulo_l" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="contenido_l">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="enlace" type="xs:string"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="sinopsis" type="xs:string"/>
+                  </xs:sequence>
+                  <xs:attribute name="id">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                         <xs:pattern value="L\d{4}"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="tipo_clase" type="xs:string"/>
+                  <xs:attribute name="n_pag" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="revistas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="revista" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="titulo_r" type="xs:string"/>
+                    <xs:element name="n_revista" type="xs:string"/>
+                    <xs:element name="indice_r">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="secciones_r">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="seccion_r" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="contenido_r">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="enlace" type="xs:string"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:pattern value="R\w*"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="tipo_clase" type="xs:string"/>
+                  <xs:attribute name="n_pag" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="periodicos">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="periodico" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="nombre" type="xs:string"/>
+                      <xs:element name="indice_p">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="seccion_p" maxOccurs="unbounded">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="articulo_p">
+                                    <xs:complexType>
+                                      <xs:attribute name="autor" type="xs:string" use="required"/>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element name="contenido_p">
+                                    <xs:complexType>
+                                      <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                          <xs:attribute name="enlace" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                      </xs:simpleContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="tipo_seccion" type="xs:string" use="required"/>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="id">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:pattern value="P\d{4}"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="tipo_clase" type="xs:string" use="required"/>
+                    <xs:attribute name="fecha" type="xs:string" use="required"/>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+</xs:schema>
+              
+           

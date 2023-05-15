@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE biblioteca [
+    <!ELEMENT biblioteca (libros, revistas, periodicos)>
+
+    <!ELEMENT libros (libro+)>
+    <!ELEMENT libro (titulo_l,indice_l,sinopsis)>
+    <!ELEMENT titulo_l (#PCDATA)>
+    <!ELEMENT indice_l (capitulos_l)>
+    <!ELEMENT capitulos_l (capitulo_l+)>
+    <!ELEMENT capitulo_l (contenido_l)>
+    <!ELEMENT contenido_l (#PCDATA)>
+    <!ELEMENT sinopsis (#PCDATA)>
+
+    <!ELEMENT revistas (revista+)>
+    <!ELEMENT revista (titulo_r, n_revista?, indice_r)>
+    <!ELEMENT titulo_r (#PCDATA)>
+    <!ELEMENT n_revista (#PCDATA)>
+    <!ELEMENT indice_r (secciones_r)>
+    <!ELEMENT secciones_r (seccion_r+)>
+    <!ELEMENT seccion_r (contenido_r+)>
+    <!ELEMENT contenido_r (#PCDATA)>
+  
+    <!ELEMENT periodicos (periodico+)>
+    <!ELEMENT periodico (nombre, indice_p)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT indice_p (seccion_p+)>
+    <!ELEMENT seccion_p (articulo_p+,contenido_p+)>
+    <!ELEMENT articulo_p (#PCDATA)>
+    <!ELEMENT contenido_p (#PCDATA)>
+
+    <!-- Atributos de libro -->
+    <!ATTLIST libro id ID #REQUIRED>
+    <!ATTLIST libro tipo_clase (novela|infantil|didactico) #REQUIRED>
+    <!ATTLIST libro n_pag CDATA #REQUIRED>
+    <!ATTLIST contenido_l enlace CDATA #REQUIRED>
+
+    <!-- Atributos de revistas -->
+    <!ATTLIST revista id ID #REQUIRED>
+    <!ATTLIST revista tipo_clase (informatica|corazon|coches|investigacion|otros) #REQUIRED>
+    <!ATTLIST revista n_pag CDATA #REQUIRED>
+    <!ATTLIST contenido_r enlace CDATA #REQUIRED>
+
+    <!-- Atributos de periodicos -->
+    <!ATTLIST periodico id ID #REQUIRED>
+    <!ATTLIST periodico tipo_clase (nacional|internacional) #REQUIRED>
+    <!ATTLIST periodico fecha CDATA #REQUIRED>
+    <!ATTLIST contenido_p enlace CDATA #REQUIRED>
+    <!ATTLIST seccion_p tipo_seccion CDATA #REQUIRED>
+    <!ATTLIST articulo_p autor CDATA #REQUIRED>
+]>
+ 
+<biblioteca>
+    <libros>
+        <libro id="L1324" tipo_clase="novela" n_pag="303">
+            <titulo_l>La Rosa Negra</titulo_l>
+            <indice_l>
+                <capitulos_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.larosanegra.elamanecer.es">El amanecer</contenido_l>
+                    </capitulo_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.larosanegra.lasombradelviento.es">La sombra del viento</contenido_l>
+                    </capitulo_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.larosanegra.reunidos.es">Reunidos</contenido_l>
+                    </capitulo_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.larosanegra.eljardin.es">El jardín</contenido_l>
+                    </capitulo_l>
+                </capitulos_l>
+            </indice_l>
+            <sinopsis>En un mundo donde los hilos del destino determinan el rumbo de cada persona, dos almas solitarias se encuentran. Ana, una joven pintora en busca de su identidad perdida, y Gabriel, un enigmático escritor marcado por un oscuro pasado. Unidos por una fuerza inexplicable, se embarcarán en un viaje inolvidable donde deberán desentrañar los secretos del universo y enfrentar los desafíos impuestos por un destino implacable. ¿Podrán encontrar la redención y liberarse de las cadenas que los atan? En un mundo donde el amor y el destino se entrelazan, su historia se convertirá en una lucha épica por el libre albedrío y la esperanza de un futuro mejor.</sinopsis>
+        </libro>
+         <libro id="L3564" tipo_clase="infantil" n_pag="12">
+            <titulo_l>EL osito Tito</titulo_l>
+            <indice_l>
+                <capitulos_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.ositotito.vamosaltaller.es">Vamos al taller</contenido_l>
+                    </capitulo_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.ositotito.elobras.es">En obras</contenido_l>
+                    </capitulo_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.ositotito.carreradecoches.es">Carrera de coches</contenido_l>
+                    </capitulo_l>
+                </capitulos_l>
+            </indice_l>
+            <sinopsis>Aprende con el Osito Tito y sus aventuras en el taller mientras ayuda a sus amigos.</sinopsis>
+        </libro>
+          <libro id="L9876" tipo_clase="didactico" n_pag="150">
+            <titulo_l>Cocina para principiantes</titulo_l>
+            <indice_l>
+                <capitulos_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.cocinaprin.indispensables.es">Indispensables</contenido_l>
+                    </capitulo_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.cocinaprin.primeros.es">Primeros</contenido_l>
+                    </capitulo_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.cocinaprin.segundos.es">Segundos</contenido_l>
+                    </capitulo_l>
+                    <capitulo_l>
+                        <contenido_l enlace="https:wwww.biblio.cocinaprin.postres.es">Postres</contenido_l>
+                    </capitulo_l>
+                </capitulos_l>
+            </indice_l>
+            <sinopsis>Adéntrate en el fascinante mundo de la cocina y descubre un universo de sabores y posibilidades. Este libro es la guía perfecta para principiantes, lleno de recetas sencillas y consejos prácticos que te ayudarán a dominar los fundamentos culinarios. Desde platos básicos y nutritivos hasta postres tentadores, aprenderás paso a paso cómo preparar comidas deliciosas sin complicaciones. Con ingredientes accesibles y técnicas básicas, podrás impresionar a tus amigos y familiares con tus habilidades culinarias recién descubiertas.</sinopsis>
+        </libro>
+    </libros>
+
+    <revistas>
+        <revista id="RO7T" tipo_clase="informatica" n_pag="15">
+            <titulo_r>Conecta</titulo_r>
+            <n_revista>142</n_revista>
+            <indice_r>
+                <secciones_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.conecta.redes.es">Redes</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.conecta.nuevastecno.es">Nuevas tecnologías</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.conecta.cursos.es">Cursos gratuitos</contenido_r>
+                    </seccion_r>
+                </secciones_r>
+            </indice_r>
+        </revista>
+        <revista id="R009" tipo_clase="corazon" n_pag="13">
+            <titulo_r>Salseo</titulo_r>
+            <n_revista>234</n_revista>
+            <indice_r>
+                <secciones_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.salseo.pillados.es">Pillados</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.salseo.gala.es">Gala</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.salseo.pasatiempos.es">Pasatiempos</contenido_r>
+                    </seccion_r>
+                </secciones_r>
+            </indice_r>
+        </revista>
+        <revista id="RY0" tipo_clase="coches" n_pag="10">
+            <titulo_r>Sobre ruedas</titulo_r>
+            <n_revista>201</n_revista>
+            <indice_r>
+                <secciones_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.sobreruedas.novedades.es">Novedades</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.sobreruedas.segundamano.es">Segunda mano</contenido_r>
+                    </seccion_r>
+                </secciones_r>
+            </indice_r>
+        </revista>
+        <revista id="RJ7" tipo_clase="investigacion" n_pag="20">
+            <titulo_r>Centaurus</titulo_r>
+            <n_revista></n_revista>
+            <indice_r>
+                <secciones_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.centaurus.descubriendoes">Descubriendo</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.centaurus.hoy.es">Tal día como hoy</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.centaurus.futuro.es">El futuro</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.centaurus.tecnologia.es">Nuevas tecnologías</contenido_r>
+                    </seccion_r>
+                </secciones_r>
+            </indice_r>
+        </revista>
+        <revista id="R98" tipo_clase="otros" n_pag="10">
+            <titulo_r>Colección La Roja</titulo_r>
+            <n_revista></n_revista>
+            <indice_r>
+                <secciones_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.laroja.porteros.es">Porteros</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.laroja.jugadores.es">Jugadores</contenido_r>
+                    </seccion_r>
+                    <seccion_r>
+                        <contenido_r enlace="https:wwww.biblio.laroja.historia.es">Hisotira</contenido_r>
+                    </seccion_r>
+                </secciones_r>
+            </indice_r>
+        </revista>
+    </revistas>
+
+    <periodicos>
+        <periodico id="P6543" tipo_clase="nacional" fecha="2023-01-02">
+            <nombre>El Nacional</nombre>
+            <indice_p>
+                <seccion_p tipo_seccion="economia">
+                    <articulo_p autor="Fancisco Peral"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.elnacional.234.es">Nuestra economía</contenido_p>
+                </seccion_p>
+                 <seccion_p tipo_seccion="opinion">
+                    <articulo_p autor="Cristina Blas"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.elnacional.4343.es">Reflexinemos</contenido_p>
+                </seccion_p>
+                 <seccion_p tipo_seccion="deportes">
+                    <articulo_p autor="Maria de los Ángles Iglesias"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.elnacional.233.es">Deportes</contenido_p>
+                </seccion_p>
+                 <seccion_p tipo_seccion="nacional">
+                    <articulo_p autor="Luis Miguel Nuñez"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.elnacional.123.es">Nacional</contenido_p>
+                </seccion_p>
+                 <seccion_p tipo_seccion="internacional">
+                    <articulo_p autor="Miguel Aprea"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.elnacional.2346.es">Internacional</contenido_p>
+                </seccion_p>
+            </indice_p>
+        </periodico>
+         <periodico id="P8761" tipo_clase="internacional" fecha="2023-04-04">
+            <nombre>The Guardian</nombre>
+            <indice_p>
+                <seccion_p tipo_seccion="economia">
+                    <articulo_p autor="Jane Austen"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.theguardian.economy.es">Economy</contenido_p>
+                </seccion_p>
+                 <seccion_p tipo_seccion="opinion">
+                    <articulo_p autor="Charles Dickens"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.theguardian.opinions.es">Opinions</contenido_p>
+                </seccion_p>
+                 <seccion_p tipo_seccion="deportes">
+                    <articulo_p autor="Virginia Woolf"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.theguardian.sports.es">Sports</contenido_p>
+                </seccion_p>
+                 <seccion_p tipo_seccion="nacional">
+                    <articulo_p autor="George Orwell"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.laroja.theguardian.national.es">National</contenido_p>
+                </seccion_p>
+                 <seccion_p tipo_seccion="internacional">
+                    <articulo_p autor="J.K. Rowling"></articulo_p>
+                    <contenido_p enlace="https:wwww.biblio.theguardian.international.es">International</contenido_p>
+                </seccion_p>
+            </indice_p>
+        </periodico>
+    </periodicos>
+</biblioteca>
