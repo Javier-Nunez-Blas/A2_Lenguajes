@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE biblioteca [
+  <!ELEMENT biblioteca (libros, revistas, periodicos)>
+  <!ELEMENT libros (libro+)>
+  <!ELEMENT libro (titulo, capitulos, indice_libro, sinopsis, num_pags_libro)>
+  <!ATTLIST libro
+    id CDATA #REQUIRED
+    tipo_clase CDATA #REQUIRED>
+  <!ELEMENT titulo (#PCDATA)>
+  <!ELEMENT capitulos (capitulo+)>
+  <!ELEMENT capitulo (contenido)>
+  <!ATTLIST capitulo
+    titulo CDATA #REQUIRED
+    num_pags CDATA #REQUIRED>
+  <!ELEMENT contenido EMPTY>
+  <!ATTLIST contenido enlace CDATA #REQUIRED>
+  <!ELEMENT indice_libro (#PCDATA)>
+  <!ELEMENT sinopsis (#PCDATA)>
+  <!ELEMENT num_pags_libro (#PCDATA)>
+  <!ELEMENT revistas (revista+)>
+  <!ELEMENT revista (titulo, num_revista, indice_revista, secciones, num_pags)>
+  <!ATTLIST revista
+    id CDATA #REQUIRED
+    tipo_clase CDATA #REQUIRED>
+  <!ELEMENT titulo_revista (#PCDATA)>
+  <!ELEMENT num_revista (#PCDATA)>
+  <!ELEMENT indice_revista (#PCDATA)>
+  <!ELEMENT secciones (seccion+)>
+  <!ELEMENT seccion (contenido_revista)>
+  <!ATTLIST seccion
+    tipo CDATA #REQUIRED
+    num_pags CDATA #REQUIRED>
+  <!ELEMENT contenido_revista EMPTY>
+  <!ATTLIST contenido_revista enlace CDATA #REQUIRED>
+  <!ELEMENT num_pags (#PCDATA)>
+  <!ELEMENT periodicos (periodico+)>
+  <!ELEMENT periodico (indice_periodico, secciones_periodico)>
+  <!ATTLIST periodico
+    id CDATA #REQUIRED
+    tipo_clase CDATA #REQUIRED
+    fecha CDATA #REQUIRED>
+  <!ELEMENT indice_periodico (#PCDATA)>
+  <!ATTLIST indice_periodico enlace CDATA #REQUIRED>
+  <!ELEMENT secciones_periodico (seccion_periodico+)>
+  <!ELEMENT seccion_periodico (articulo, contenido_periodico)>
+  <!ATTLIST seccion_periodico
+    tipo CDATA #REQUIRED
+    num_pags CDATA #REQUIRED>
+  <!ELEMENT articulo EMPTY>
+  <!ATTLIST articulo autor CDATA #IMPLIED>
+  <!ELEMENT contenido_periodico EMPTY>
+  <!ATTLIST contenido_periodico enlace CDATA #REQUIRED>
+]>
+
+<biblioteca>
+  <libros>
+    <libro id="L5001" tipo_clase="ficción">
+      <titulo>La piedra filosofal</titulo>
+      <capitulos>
+        <capitulo titulo="El niño que sobrevivió" num_pags="245">
+          <contenido enlace="https.//www.harryPotter.com" />
+        </capitulo>
+        <capitulo titulo="El vidrio que se desvaneció" num_pags="167">
+          <contenido enlace="https.//www.harryPotter.com" />
+        </capitulo>
+      </capitulos>
+      <indice_libro>indice del libro</indice_libro>
+      <sinopsis>Sinopsis del libro</sinopsis>
+      <num_pags_libro>534</num_pags_libro>
+    </libro>
+    <libro id="L5002" tipo_clase="aventuras">
+      <titulo>El último pasajero</titulo>
+      <capitulos>
+        <capitulo titulo="Frescor" num_pags="23">
+          <contenido enlace="https://www.ManuelLoureiro.com" />
+        </capitulo>
+      </capitulos>
+      <indice_libro>indice del libro</indice_libro>
+      <sinopsis>sinopsis del libro</sinopsis>
+      <num_pags_libro>211</num_pags_libro>
+    </libro>
+  </libros>
+  <revistas>
+    <revista id="R4001" tipo_clase="informatica">
+      <titulo>Computer Hoy</titulo>
+      <num_revista>34</num_revista>
+      <indice_revista>indice de la revista</indice_revista>
+      <secciones>
+        <seccion tipo="seccion1" num_pags="6">
+          <contenido_revista enlace="https://wwww.ComputerHoy.com" />
+        </seccion>
+        <seccion tipo="seccion2" num_pags="4">
+          <contenido_revista enlace="https://wwww.ComputerHoy.com" />
+        </seccion>
+      </secciones>
+      <num_pags>32</num_pags>
+    </revista>
+    <revista id="R4002" tipo_clase="coches">
+      <titulo>Motor Pasion</titulo>
+      <num_revista>67</num_revista>
+      <indice_revista>indice de la revista</indice_revista>
+      <secciones>
+        <seccion tipo="seccion1" num_pags="7">
+          <contenido_revista enlace="https://www.MotorPasion.com" />
+        </seccion>
+        <seccion tipo="seccion2" num_pags="9">
+          <contenido_revista enlace="https://www.MotorPasion" />
+        </seccion>
+      </secciones>
+      <num_pags>22</num_pags>
+    </revista>
+    <revista id="R4003" tipo_clase="cocina">
+      <titulo>Saber cocinar</titulo>
+      <num_revista>49</num_revista>
+      <indice_revista>indice de la revista</indice_revista>
+      <secciones>
+        <seccion tipo="secion1" num_pags="7">
+          <contenido_revista enlace="https://www.Sabercocinar.com" />
+        </seccion>
+        <seccion tipo="seccion2" num_pags="11">
+          <contenido_revista enlace="https://www.Sabercocinar.com" />
+        </seccion>
+      </secciones>
+      <num_pags>220</num_pags>
+    </revista>
+    <revista id="R4004" tipo_clase="corazon">
+      <titulo>HOLA</titulo>
+      <num_revista>33</num_revista>
+      <indice_revista>indice de la revista</indice_revista>
+      <secciones>
+        <seccion tipo="seccion1" num_pags="8">
+          <contenido_revista enlace="https://www.Hola.com" />
+        </seccion>
+        <seccion tipo="seccion2" num_pags="4">
+          <contenido_revista enlace="https://www.Hola.com" />
+        </seccion>
+      </secciones>
+      <num_pags>220</num_pags>
+    </revista>
+    <revista id="R4005" tipo_clase="investigacion">
+      <titulo>Mente y Cerebro</titulo>
+      <num_revista>89</num_revista>
+      <indice_revista>indice de la revista</indice_revista>
+      <secciones>
+        <seccion tipo="secion1" num_pags="24">
+          <contenido_revista enlace="htpps://www.MenteYcerebro" />
+        </seccion>
+        <seccion tipo="seccion2" num_pags="12">
+          <contenido_revista enlace="htpps://www.MenteYcerebro" />
+        </seccion>
+      </secciones>
+      <num_pags>220</num_pags>
+    </revista>
+  </revistas>
+  <periodicos>
+    <periodico id="P5001" tipo_clase="nacional" fecha="02/09/2009">
+      <indice_periodico enlace="http://www.enlace_indice.com" />
+      <secciones_periodico>
+        <seccion_periodico tipo="economica" num_pags="23">
+          <articulo autor="jaime gomez"/>
+          <contenido_periodico enlace="https://www.enlace_parte1.com" />
+        </seccion_periodico>
+      </secciones_periodico>
+    </periodico>
+    <periodico id="P5002" tipo_clase="internacional" fecha="09/11/2023">
+      <indice_periodico enlace="https://www.enlace_indice.com" />
+      <secciones_periodico>
+        <seccion_periodico tipo="opinion" num_pags="12">
+          <articulo autor="Ramon Garcia"/>
+          <contenido_periodico enlace="https://www.enlace_parte2.com" />
+        </seccion_periodico>
+        </secciones_periodico>
+    </periodico>
+    <periodico id="P5003" tipo_clase="nacional" fecha="23/01/2020">
+      <indice_periodico enlace="https://www.enlace_indice.com" />
+      <secciones_periodico>
+        <seccion_periodico tipo="deporte" num_pags="15">
+          <articulo autor="Gracia Moreno"/>
+          <contenido_periodico enlace="https://www.enlace_parte3.com" />
+        </seccion_periodico>
+      </secciones_periodico>
+    </periodico>
+  </periodicos>
+</biblioteca>
